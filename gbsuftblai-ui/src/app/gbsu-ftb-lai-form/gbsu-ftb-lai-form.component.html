@@ -1,0 +1,18 @@
+<div class="container">    
+    <form  [formGroup]="InputForm" (ngSubmit)="submitNumber()" class="container">
+        <div>
+            <label>Number to convert : </label>
+            <input type="number" formControlName="inputNumber" class="form-control" 
+            [ngClass]="{ 'is-invalid': submitted && f.inputNumber.errors }" />
+            
+            <div *ngIf="submitted && f.inputNumber.errors" class="invalid-feedback">
+                <div *ngIf="f.inputNumber.errors.required">Required field!</div>
+            </div>
+        </div>
+        <br>
+        <div>
+            <button class="btn btn-primary mr-1">convert</button>
+        </div>
+    </form>
+</div>
+
